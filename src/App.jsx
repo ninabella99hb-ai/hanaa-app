@@ -1,4 +1,4 @@
-  import { useState, useRef, useEffect } from "react";
+        import { useState, useRef, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const SYSTEM_PROMPT = `أنت معلّمة خاصة ذكية ومتحمّسة اسمك "هناء". مهمتك مساعدة الطلاب والشباب على التعلّم بطريقة ممتعة وفعّالة.
@@ -50,6 +50,7 @@ export default function App() {
     setLoading(true);
 
     try {
+      // استخدام المفتاح الذي وضعتِه في Vercel
       const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       
