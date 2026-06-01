@@ -23,7 +23,7 @@ export default function App() {
       
       setMessages(prev => [...prev, { role: "assistant", content: reply }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: "assistant", content: "خطأ في الاتصال. تأكدي من مفتاح API في Vercel." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: "عذراً، حدث خطأ. تأكدي من مفتاح API في Vercel." }]);
     } finally {
       setLoading(false);
     }
@@ -32,7 +32,7 @@ export default function App() {
   return (
     <div style={{ padding: 20, fontFamily: "sans-serif" }}>
       <h1>معلّمتك هناء 🌟</h1>
-      <div style={{ height: "60vh", overflowY: "auto", border: "1px solid #ccc", padding: 10 }}>
+      <div style={{ height: "60vh", overflowY: "auto", border: "1px solid #ccc", padding: 10, marginBottom: 10 }}>
         {messages.map((m, i) => (
           <p key={i}><strong>{m.role === "user" ? "أنت: " : "هناء: "}</strong>{m.content}</p>
         ))}
